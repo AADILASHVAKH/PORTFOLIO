@@ -210,3 +210,72 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   });
 });
+
+// ====== ORBIT ANIMATION SYSTEM ======
+(function () {
+  function setupOrbit(groupId, radius, speed, startAngle) {
+    const group = document.getElementById(groupId);
+    if (!group) return null;
+    const icons = group.querySelectorAll(".orbit-icon");
+    const count = icons.length;
+    const angleStep = (2 * Math.PI) / count;
+    let angle = startAngle || 0;
+
+    return {
+      update: function () {
+        angle += speed;
+        icons.forEach((icon, i) => {
+          const a = angle + i * angleStep;
+          const x = Math.cos(a) * radius - 24;
+          const y = Math.sin(a) * radius - 24;
+          icon.style.transform = `translate(${x}px, ${y}px)`;
+        });
+      },
+    };
+  }
+
+  const innerOrbit = setupOrbit("orbitInner", 170, 0.005, 0);
+  const outerOrbit = setupOrbit("orbitOuter", 240, -0.003, Math.PI / 8);
+
+  function animateOrbits() {
+    if (innerOrbit) innerOrbit.update();
+    if (outerOrbit) outerOrbit.update();
+    requestAnimationFrame(animateOrbits);
+  }
+
+  animateOrbits();
+})();
+
+// ====== PARALLAX SCROLL EFFECT ======
+(function () {
+  const heroAvatar = document.querySelector(".hero-avatar");
+  const heroText = document.querySelector(".hero-text");
+  const floatingDots = document.querySelectorAll(".floating-dot");
+  let ticking = false;
+
+  function updateParallax() {
+    const scrollY = window.scrollY;
+    if (heroAvatar) {
+      heroAvatar.style.transform = `translateY(${scrollY * 0.1}px)`;
+    }
+    if (heroText) {
+      heroText.style.transform = `translateY(${scrollY * 0.05}px)`;
+    }
+    floatingDots.forEach((dot, i) => {
+      const speed = 0.15 + i * 0.05;
+      dot.style.transform = `translateY(${scrollY * speed}px)`;
+    });
+    ticking = false;
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }
+
+  if (window.innerWidth > 768) {
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+})();
