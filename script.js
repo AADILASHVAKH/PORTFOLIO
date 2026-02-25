@@ -234,8 +234,11 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     };
   }
 
-  const innerOrbit = setupOrbit("orbitInner", 170, 0.005, 0);
-  const outerOrbit = setupOrbit("orbitOuter", 240, -0.003, Math.PI / 8);
+  const isMobile = window.innerWidth <= 768;
+  const innerRadius = isMobile ? 120 : 170;
+  const outerRadius = isMobile ? 170 : 240;
+  const innerOrbit = setupOrbit("orbitInner", innerRadius, 0.005, 0);
+  const outerOrbit = setupOrbit("orbitOuter", outerRadius, -0.003, Math.PI / 8);
 
   function animateOrbits() {
     if (innerOrbit) innerOrbit.update();
