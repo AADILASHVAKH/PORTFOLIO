@@ -220,14 +220,16 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     const count = icons.length;
     const angleStep = (2 * Math.PI) / count;
     let angle = startAngle || 0;
+    const isMobile = window.innerWidth <= 768;
+    const iconOffset = isMobile ? 17 : 24;
 
     return {
       update: function () {
         angle += speed;
         icons.forEach((icon, i) => {
           const a = angle + i * angleStep;
-          const x = Math.cos(a) * radius - 24;
-          const y = Math.sin(a) * radius - 24;
+          const x = Math.cos(a) * radius - iconOffset;
+          const y = Math.sin(a) * radius - iconOffset;
           icon.style.transform = `translate(${x}px, ${y}px)`;
         });
       },
@@ -235,8 +237,8 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   }
 
   const isMobile = window.innerWidth <= 768;
-  const innerRadius = isMobile ? 120 : 170;
-  const outerRadius = isMobile ? 170 : 240;
+  const innerRadius = isMobile ? 110 : 170;
+  const outerRadius = isMobile ? 155 : 240;
   const innerOrbit = setupOrbit("orbitInner", innerRadius, 0.005, 0);
   const outerOrbit = setupOrbit("orbitOuter", outerRadius, -0.003, Math.PI / 8);
 

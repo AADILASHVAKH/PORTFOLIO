@@ -1001,7 +1001,7 @@ a.info-value:hover {
   }
   .hero-avatar {
     order: 1;
-    height: 320px;
+    height: 350px;
     overflow: visible;
     position: relative;
   }
@@ -1018,24 +1018,28 @@ a.info-value:hover {
   }
 
   .avatar-ring {
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
   }
   .avatar-initials {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
   }
-  .orbit-wrapper {
-    display: block;
-    transform: scale(0.55);
-    transform-origin: center center;
+
+  .orbit-inner {
+    width: 220px;
+    height: 220px;
+  }
+  .orbit-outer {
+    width: 310px;
+    height: 310px;
   }
   .orbit-icon {
-    width: 40px;
-    height: 40px;
+    width: 34px;
+    height: 34px;
   }
   .orbit-icon svg {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
   }
 
   .floating-dot {
@@ -1044,26 +1048,26 @@ a.info-value:hover {
   .dot-1 {
     width: 10px;
     height: 10px;
-    top: 20px;
-    right: 40px;
+    top: 10px;
+    right: 60px;
   }
   .dot-2 {
     width: 7px;
     height: 7px;
-    bottom: 40px;
-    right: 20px;
+    bottom: 30px;
+    right: 40px;
   }
   .dot-3 {
     width: 6px;
     height: 6px;
-    top: 50px;
-    left: 20px;
+    top: 40px;
+    left: 40px;
   }
   .dot-4 {
     width: 9px;
     height: 9px;
-    bottom: 60px;
-    left: 35px;
+    bottom: 50px;
+    left: 55px;
   }
 
   .scroll-indicator {
@@ -1160,17 +1164,30 @@ a.info-value:hover {
     font-size: 0.9rem;
   }
   .hero-avatar {
-    height: 280px;
+    height: 260px;
   }
   .avatar-ring {
-    width: 130px;
-    height: 130px;
+    width: 110px;
+    height: 110px;
   }
   .avatar-initials {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
-  .orbit-wrapper {
-    transform: scale(0.42);
+  .orbit-inner {
+    width: 180px;
+    height: 180px;
+  }
+  .orbit-outer {
+    width: 260px;
+    height: 260px;
+  }
+  .orbit-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .orbit-icon svg {
+    width: 13px;
+    height: 13px;
   }
   .section-title {
     font-size: 1.6rem;
