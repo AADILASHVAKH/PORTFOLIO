@@ -1216,3 +1216,22 @@ a.info-value:hover {
     bottom: 16px;
   }
 }
+
+/* Footer Link Styles */
+.footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.footer-link {
+  color: var(--red);
+  font-weight: 500;
+  transition: var(--transition);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+.footer-link:hover {
+  color: var(--text);
+  text-decoration-thickness: 2px;
+}
