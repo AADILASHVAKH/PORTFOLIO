@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- ====== TUBES CURSOR CANVAS ====== -->
+    <canvas id="tubesCursor"></canvas>
     <!-- ====== NAVBAR ====== -->
     <nav class="navbar" id="navbar">
       <div class="nav-container">
@@ -54,6 +56,12 @@
           <div class="hero-btns">
             <a href="#contact" class="btn btn-primary">Hire Me</a>
             <a href="#projects" class="btn btn-outline">View Projects</a>
+            <a href="PORTFOLIO/cv/70__ATS_rating_Resume_Template (4).pdf" target="_blank" class="btn btn-cv" id="downloadCvBtn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+              </svg>
+              Download CV
+            </a>
           </div>
           <div class="hero-socials">
             <a
@@ -592,6 +600,7 @@
       <span>✅ Message sent successfully!</span>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/threejs-components@0.0.19/build/cursors/tubes1.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

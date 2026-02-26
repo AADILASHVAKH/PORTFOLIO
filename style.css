@@ -55,6 +55,17 @@ img {
   padding: 0 24px;
 }
 
+/* ====== TUBES CURSOR ====== */
+#tubesCursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
 /* ====== NAVBAR ====== */
 .navbar {
   position: fixed;
@@ -186,6 +197,30 @@ img {
   border-color: var(--red);
   color: var(--red);
   transform: translateY(-2px);
+}
+
+.btn-cv {
+  background: linear-gradient(
+    135deg,
+    rgba(230, 57, 70, 0.15),
+    rgba(230, 57, 70, 0.05)
+  );
+  color: var(--red);
+  border-color: var(--red);
+}
+.btn-cv svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+.btn-cv:hover {
+  background: var(--red);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--red-glow);
+}
+.btn-cv:hover svg {
+  transform: translateY(2px);
 }
 
 .btn-full {

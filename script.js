@@ -284,3 +284,22 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 })();
+
+// ====== TUBES CURSOR (WebGL) ======
+(function () {
+  // Skip on touch/mobile devices for performance
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
+
+  const tubesCanvas = document.getElementById('tubesCursor');
+  if (!tubesCanvas || typeof TubesCursor === 'undefined') return;
+
+  TubesCursor(tubesCanvas, {
+    tubes: {
+      colors: ['#f967fb', '#53bc28', '#6958d5'],
+      lights: {
+        intensity: 200,
+        colors: ['#83f36e', '#fe8a2e', '#ff008a', '#60aed5'],
+      },
+    },
+  });
+})();
